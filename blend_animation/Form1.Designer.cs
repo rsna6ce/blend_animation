@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.checkBoxPreview = new System.Windows.Forms.CheckBox();
+            this.buttonStart = new System.Windows.Forms.Button();
+            this.comboBoxBlendType = new System.Windows.Forms.ComboBox();
+            this.comboBoxDisplay = new System.Windows.Forms.ComboBox();
+            this.buttonImage2 = new System.Windows.Forms.Button();
+            this.buttonImage1 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.buttonImage1 = new System.Windows.Forms.Button();
-            this.buttonImage2 = new System.Windows.Forms.Button();
-            this.comboBoxDisplay = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBoxResult = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.comboBoxBlendType = new System.Windows.Forms.ComboBox();
-            this.buttonStart = new System.Windows.Forms.Button();
-            this.checkBoxPreview = new System.Windows.Forms.CheckBox();
             this.timerAnimation = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,13 +74,98 @@
             this.panel1.Size = new System.Drawing.Size(148, 560);
             this.panel1.TabIndex = 0;
             // 
-            // textBox1
+            // checkBoxPreview
             // 
-            this.textBox1.Location = new System.Drawing.Point(8, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(100, 19);
-            this.textBox1.TabIndex = 0;
+            this.checkBoxPreview.AutoSize = true;
+            this.checkBoxPreview.Location = new System.Drawing.Point(8, 220);
+            this.checkBoxPreview.Name = "checkBoxPreview";
+            this.checkBoxPreview.Size = new System.Drawing.Size(88, 16);
+            this.checkBoxPreview.TabIndex = 5;
+            this.checkBoxPreview.Text = "preview only";
+            this.checkBoxPreview.UseVisualStyleBackColor = true;
+            // 
+            // buttonStart
+            // 
+            this.buttonStart.Location = new System.Drawing.Point(8, 192);
+            this.buttonStart.Name = "buttonStart";
+            this.buttonStart.Size = new System.Drawing.Size(124, 23);
+            this.buttonStart.TabIndex = 4;
+            this.buttonStart.Text = "Start";
+            this.buttonStart.UseVisualStyleBackColor = true;
+            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
+            // 
+            // comboBoxBlendType
+            // 
+            this.comboBoxBlendType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxBlendType.FormattingEnabled = true;
+            this.comboBoxBlendType.Items.AddRange(new object[] {
+            "Normal",
+            "H-Gradation"});
+            this.comboBoxBlendType.Location = new System.Drawing.Point(8, 168);
+            this.comboBoxBlendType.Name = "comboBoxBlendType";
+            this.comboBoxBlendType.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxBlendType.TabIndex = 3;
+            // 
+            // comboBoxDisplay
+            // 
+            this.comboBoxDisplay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxDisplay.FormattingEnabled = true;
+            this.comboBoxDisplay.Items.AddRange(new object[] {
+            "Image1",
+            "Image2",
+            "Result"});
+            this.comboBoxDisplay.Location = new System.Drawing.Point(8, 120);
+            this.comboBoxDisplay.Name = "comboBoxDisplay";
+            this.comboBoxDisplay.Size = new System.Drawing.Size(121, 20);
+            this.comboBoxDisplay.TabIndex = 3;
+            this.comboBoxDisplay.SelectedIndexChanged += new System.EventHandler(this.comboBoxDisplay_SelectedIndexChanged);
+            // 
+            // buttonImage2
+            // 
+            this.buttonImage2.Location = new System.Drawing.Point(112, 72);
+            this.buttonImage2.Name = "buttonImage2";
+            this.buttonImage2.Size = new System.Drawing.Size(20, 19);
+            this.buttonImage2.TabIndex = 2;
+            this.buttonImage2.Text = "...";
+            this.buttonImage2.UseVisualStyleBackColor = true;
+            this.buttonImage2.Click += new System.EventHandler(this.buttonImage2_Click);
+            // 
+            // buttonImage1
+            // 
+            this.buttonImage1.Location = new System.Drawing.Point(112, 28);
+            this.buttonImage1.Name = "buttonImage1";
+            this.buttonImage1.Size = new System.Drawing.Size(20, 19);
+            this.buttonImage1.TabIndex = 2;
+            this.buttonImage1.Text = "...";
+            this.buttonImage1.UseVisualStyleBackColor = true;
+            this.buttonImage1.Click += new System.EventHandler(this.buttonImage1_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(8, 152);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(56, 12);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Animation";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 104);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(43, 12);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Display";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 56);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Image2";
             // 
             // label1
             // 
@@ -99,63 +184,19 @@
             this.textBox2.Size = new System.Drawing.Size(100, 19);
             this.textBox2.TabIndex = 0;
             // 
-            // label2
+            // textBox1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 56);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Image2";
-            // 
-            // buttonImage1
-            // 
-            this.buttonImage1.Location = new System.Drawing.Point(112, 28);
-            this.buttonImage1.Name = "buttonImage1";
-            this.buttonImage1.Size = new System.Drawing.Size(20, 19);
-            this.buttonImage1.TabIndex = 2;
-            this.buttonImage1.Text = "...";
-            this.buttonImage1.UseVisualStyleBackColor = true;
-            this.buttonImage1.Click += new System.EventHandler(this.buttonImage1_Click);
-            // 
-            // buttonImage2
-            // 
-            this.buttonImage2.Location = new System.Drawing.Point(112, 72);
-            this.buttonImage2.Name = "buttonImage2";
-            this.buttonImage2.Size = new System.Drawing.Size(20, 19);
-            this.buttonImage2.TabIndex = 2;
-            this.buttonImage2.Text = "...";
-            this.buttonImage2.UseVisualStyleBackColor = true;
-            this.buttonImage2.Click += new System.EventHandler(this.buttonImage2_Click);
-            // 
-            // comboBoxDisplay
-            // 
-            this.comboBoxDisplay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxDisplay.FormattingEnabled = true;
-            this.comboBoxDisplay.Items.AddRange(new object[] {
-            "Image1",
-            "Image2",
-            "Result"});
-            this.comboBoxDisplay.Location = new System.Drawing.Point(8, 120);
-            this.comboBoxDisplay.Name = "comboBoxDisplay";
-            this.comboBoxDisplay.Size = new System.Drawing.Size(121, 20);
-            this.comboBoxDisplay.TabIndex = 3;
-            this.comboBoxDisplay.SelectedIndexChanged += new System.EventHandler(this.comboBoxDisplay_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(8, 104);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(43, 12);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Display";
+            this.textBox1.Location = new System.Drawing.Point(8, 28);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(100, 19);
+            this.textBox1.TabIndex = 0;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Location = new System.Drawing.Point(152, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(1, 1);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -165,7 +206,7 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(152, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(2, 2);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox2.TabIndex = 1;
             this.pictureBox2.TabStop = false;
@@ -175,50 +216,10 @@
             // 
             this.pictureBoxResult.Location = new System.Drawing.Point(152, 4);
             this.pictureBoxResult.Name = "pictureBoxResult";
-            this.pictureBoxResult.Size = new System.Drawing.Size(100, 50);
+            this.pictureBoxResult.Size = new System.Drawing.Size(3, 3);
             this.pictureBoxResult.TabIndex = 1;
             this.pictureBoxResult.TabStop = false;
             this.pictureBoxResult.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 152);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(56, 12);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Animation";
-            // 
-            // comboBoxBlendType
-            // 
-            this.comboBoxBlendType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxBlendType.FormattingEnabled = true;
-            this.comboBoxBlendType.Items.AddRange(new object[] {
-            "Normal"});
-            this.comboBoxBlendType.Location = new System.Drawing.Point(8, 168);
-            this.comboBoxBlendType.Name = "comboBoxBlendType";
-            this.comboBoxBlendType.Size = new System.Drawing.Size(121, 20);
-            this.comboBoxBlendType.TabIndex = 3;
-            // 
-            // buttonStart
-            // 
-            this.buttonStart.Location = new System.Drawing.Point(8, 192);
-            this.buttonStart.Name = "buttonStart";
-            this.buttonStart.Size = new System.Drawing.Size(124, 23);
-            this.buttonStart.TabIndex = 4;
-            this.buttonStart.Text = "Start";
-            this.buttonStart.UseVisualStyleBackColor = true;
-            this.buttonStart.Click += new System.EventHandler(this.buttonStart_Click);
-            // 
-            // checkBoxPreview
-            // 
-            this.checkBoxPreview.AutoSize = true;
-            this.checkBoxPreview.Location = new System.Drawing.Point(8, 220);
-            this.checkBoxPreview.Name = "checkBoxPreview";
-            this.checkBoxPreview.Size = new System.Drawing.Size(88, 16);
-            this.checkBoxPreview.TabIndex = 5;
-            this.checkBoxPreview.Text = "preview only";
-            this.checkBoxPreview.UseVisualStyleBackColor = true;
             // 
             // timerAnimation
             // 
