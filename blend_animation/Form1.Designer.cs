@@ -117,7 +117,7 @@
             this.comboBoxDisplay.Location = new System.Drawing.Point(8, 120);
             this.comboBoxDisplay.Name = "comboBoxDisplay";
             this.comboBoxDisplay.Size = new System.Drawing.Size(121, 20);
-            this.comboBoxDisplay.TabIndex = 3;
+            this.comboBoxDisplay.TabIndex = 2;
             this.comboBoxDisplay.SelectedIndexChanged += new System.EventHandler(this.comboBoxDisplay_SelectedIndexChanged);
             // 
             // buttonImage2
@@ -125,7 +125,7 @@
             this.buttonImage2.Location = new System.Drawing.Point(112, 72);
             this.buttonImage2.Name = "buttonImage2";
             this.buttonImage2.Size = new System.Drawing.Size(20, 19);
-            this.buttonImage2.TabIndex = 2;
+            this.buttonImage2.TabIndex = 1;
             this.buttonImage2.Text = "...";
             this.buttonImage2.UseVisualStyleBackColor = true;
             this.buttonImage2.Click += new System.EventHandler(this.buttonImage2_Click);
@@ -135,7 +135,7 @@
             this.buttonImage1.Location = new System.Drawing.Point(112, 28);
             this.buttonImage1.Name = "buttonImage1";
             this.buttonImage1.Size = new System.Drawing.Size(20, 19);
-            this.buttonImage1.TabIndex = 2;
+            this.buttonImage1.TabIndex = 0;
             this.buttonImage1.Text = "...";
             this.buttonImage1.UseVisualStyleBackColor = true;
             this.buttonImage1.Click += new System.EventHandler(this.buttonImage1_Click);
@@ -183,6 +183,7 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(100, 19);
             this.textBox2.TabIndex = 0;
+            this.textBox2.TabStop = false;
             // 
             // textBox1
             // 
@@ -191,6 +192,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(100, 19);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TabStop = false;
             // 
             // pictureBox1
             // 

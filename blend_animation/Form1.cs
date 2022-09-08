@@ -81,14 +81,22 @@ namespace blend_animation
             BlendToSrc2,
         }
 
-        const int stepPercent = 10;
+        const int stepPercent = 5;
         const int originalFrame = 5;
         phase currPhase = phase.DisplaySrc1;
         int currPercent = 0;
         int currFrame = 0;
+        List<Bitmap> anigif_frames = new List<Bitmap>();
         private void timerAnimation_Tick(object sender, EventArgs e)
         {
             DrawResult();
+            if (!checkBoxPreview.Checked)
+            {
+                int w = pictureBoxResult.Image.Width;
+                int h = pictureBoxResult.Image.Height;
+                Bitmap bmpImg3 = (Bitmap)pictureBoxResult.Image;
+                anigif_frames.Add((Bitmap)bmpImg3.Clone());
+            }
             switch (currPhase)
             {
                 case phase.DisplaySrc1:
@@ -122,6 +130,24 @@ namespace blend_animation
                     if (100 < currPercent)
                     {
                         timerAnimation.Stop();
+                        if (!checkBoxPreview.Checked)
+                        {
+                            SaveFileDialog saveFileDialog = new SaveFileDialog();
+                            saveFileDialog.Title = "Blend Animation GIF";
+                            DateTime dt = DateTime.Now;
+                            saveFileDialog.FileName = dt.ToString("yyyyMMdd_HHmmss") + ".gif";
+                            DialogResult result = saveFileDialog.ShowDialog();
+                            if (result == DialogResult.OK)
+                            {
+                                var bmps = new List<MyGifEncorder.BitmapAndDelayTime>();
+                                ushort delayTime = 10;// (ushort)timerAnimation.Interval;
+                                foreach (var f in anigif_frames)
+                                {
+                                    bmps.Add(new MyGifEncorder.BitmapAndDelayTime(f, delayTime));
+                                }
+                                MyGifEncorder.SaveAnimatedGif(saveFileDialog.FileName, bmps, 0);
+                            }
+                        }
                         buttonStart.Enabled = true;
                     }
                     break;
@@ -163,7 +189,10 @@ namespace blend_animation
             {
                 if (this.comboBoxBlendType.Text == "H-Gradation")
                 {
-                    alpha1 = Math.Min(Math.Max(alpha1 - ((double)(y-bmpData1.Height/2) / (double)bmpData1.Height * 0.0005), 0.0),1.0);
+                    const int blendAreaHeight = 100;
+                    int baseY = bmpData1.Height * (currPercent * (100 + blendAreaHeight * 2) / 100) / (100 + blendAreaHeight * 2);
+                    int diffY = baseY - y;
+                    alpha1 = Math.Min(Math.Max( (double)diffY / (double)blendAreaHeight * 3, 0.0),1.0);
                     alpha2 = 1.0 - alpha1;
                 }
                 for (int x = 0; x < bmpData1.Width; x++)
@@ -227,8 +256,9 @@ namespace blend_animation
             pictureBoxResult.Visible = true;
             pictureBoxResult.Size = pictureBox1.Size;
             comboBoxDisplay.SelectedIndex = 2; // result
-            timerAnimation.Start();
+            anigif_frames.Clear();
             buttonStart.Enabled = false;
+            timerAnimation.Start();
         }
 
     }
