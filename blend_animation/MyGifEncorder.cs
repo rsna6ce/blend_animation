@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 
-
 // from https://qiita.com/kob58im/items/d76ef98de48a5a17165e
+// special thanks
 
 public static class MyGifEncorder
 {
