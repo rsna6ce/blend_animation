@@ -104,7 +104,7 @@ namespace blend_animation
 
         private void buttonRemove_Click(object sender, EventArgs e)
         {
-            if (listBoxFiles.Items.Count == 0)
+            if (listBoxFiles.SelectedIndex < 0)
             {
                 return;
             }
