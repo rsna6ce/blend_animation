@@ -6,6 +6,7 @@
   * blend_animation/bin/Release/blend_animation.exe
 
 ## how to use
+![image](image/form.png)
 ### Add
 * Add an image file by pressing the Add button
 * Or drag and drop image files into the list
