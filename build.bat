@@ -4,6 +4,20 @@ set SOLUTION_FILE=blend_animation.sln
 set BUILD_CONFIG=release
 set BUILD_TYPE=rebuild
 
+set RESX1="blend_animation\Form1.resx"
+if exist %RESX1% (
+    copy %RESX1% "%RESX1%2"
+    copy "%RESX1%2" "%RESX1%"
+    del "%RESX1%2"
+)
+set RESX2="blend_animation\Properties\Resources.resx"
+if exist %RESX2% (
+    copy %RESX2% "%RESX2%2"
+    copy "%RESX2%2" "%RESX2%"
+    del "%RESX2%2"
+)
+
+
 if not exist "%MSBUILD_PATH%" (
     echo ÉGÉâÅ[:MSBuildÇ™ë∂ç›ÇµÇ‹ÇπÇÒ
     exit /b 0
