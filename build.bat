@@ -36,7 +36,7 @@ exit 0
 
 :rewrite_file
     if exist %1 (
-        copy %1 "%12"
+        type %1 > "%12"
         copy "%12" "%1"
         del "%12"
     )
