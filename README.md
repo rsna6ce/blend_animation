@@ -1,5 +1,7 @@
 # blend_animation
 
+![image](image/image0.gif) ![image](image/image1.gif)
+
 ## how to build
 * Develop with VS2013
 * or double-click build.bat
