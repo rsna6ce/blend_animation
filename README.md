@@ -5,7 +5,8 @@
 ## how to build
 * Develop with VS2013
 * or double-click build.bat
-  * blend_animation/bin/Release/blend_animation.exe
+  * Generated executable binary  
+blend_animation/bin/Release/blend_animation.exe
 
 ## how to use
 ![image](image/form.png)
