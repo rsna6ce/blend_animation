@@ -4,19 +4,9 @@ set SOLUTION_FILE=blend_animation.sln
 set BUILD_CONFIG=release
 set BUILD_TYPE=rebuild
 
-set RESX1="blend_animation\Form1.resx"
-if exist %RESX1% (
-    copy %RESX1% "%RESX1%2"
-    copy "%RESX1%2" "%RESX1%"
-    del "%RESX1%2"
-)
-set RESX2="blend_animation\Properties\Resources.resx"
-if exist %RESX2% (
-    copy %RESX2% "%RESX2%2"
-    copy "%RESX2%2" "%RESX2%"
-    del "%RESX2%2"
-)
-
+call :rewrite_file "blend_animation\Form1.resx"
+call :rewrite_file "blend_animation\Properties\Resources.resx"
+call :rewrite_file "blend_animation\blend_animation.csproj"
 
 if not exist "%MSBUILD_PATH%" (
     echo エラー:MSBuildが存在しません
@@ -43,3 +33,10 @@ if not "%BUILD_TYPE%"=="build" if not "%BUILD_TYPE%"=="rebuild" (
 @echo ビルドが完了しました
 pause
 exit 0
+
+:rewrite_file
+    if exist %1 (
+        copy %1 "%12"
+        copy "%12" "%1"
+        del "%12"
+    )
